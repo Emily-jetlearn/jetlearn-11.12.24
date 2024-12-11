@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Buttons and info panels</title>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.j"></script>
+        <script src="highlight.js"></script>
+        <script src="info-panel.js"></script>
+    </head>
+    <body>
+        <a-scene
+            background="color: #212"
+            cursor="rayOrigin: mouse; fuse: false;" raycaster="objects: .raycastable">
+            <a-assets>
+
+                <img id="hippogrif" src="assets/hippogrif.jpg">
+                <img id="hippogrifPoster" src="assets/hippogrifPoster.jpg">
+
+                <img id="houseelf" src="assets/houseelf.jpg">
+                <img id="houseelfPoster" src="assets/houseelfPoster.jpg">
+
+                <img id="goblin" src="assets/goblin.jpg">
+                <img id="goblinPoster" src="assets/goblinPoster.jpg">
+
+                <img id="pheonix" src="assets/pheonix.jpg">
+                <img id="pheonixPoster" src="assets/pheonixPoster.jpg">
+
+                <img id="dementor" src="assets/dementor.jpg">
+                <img id="dementor" src="assets/dementorPoster.jpg">
+
+                <img id="scene" src="assests/back.jpg">
+                <a-mixin
+                    id="frame"
+                    geometry="primitive: plane; width: 0.57833532; height: 0.8192"
+                    material="color: white; shader: flat"
+                    animation_scale="property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter"
+                    animation_scale_reverse="property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave">
+                </a-mixin>
+                <a-mixin
+                id="moveImage"
+                geometry="primitive: plane; width: 1.5; height: 0.81"
+                material="src: #pheonix; shader: flat; transparent: true"
+                position="0 0.495 0.002"
+                ></a-mixin>
+            </a-assets>
+            <a-sky src="#scene"></a-sky>
+
+            <a-entity>
+            <a-entity
+            id="background"
+            position="0 0 0"
+            geometry="primitive: sphere; radius: 2.0"
+            material="color: red; side: back; shader: flat"
+            scale="0.001 0.001 0.001"
+            visible="false" class="raycastable">
+        </a-entity>
+
+        <a-entity
+            id="fadeBackground"
+            geometry="primitive: sphere; radius: 2.5"
+            material="color: black; side: back; shader: flat; transparent: true; opacity: 0.6" visible="false">
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="ui" position="0 1.6 -2.5"
+                <!--poster-->
+    <a-entity id="menu" highlight>
+        <a-entity id="hippogrifButton" position="-1.6 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #hippogrifPoster" mixin="poster"></a-entity>
+
+        <a-entity id="houseelfButton" position="-0.8 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #houseelfPoster" mixin="poster"></a-entity>
+
+        <a-entity id="goblinButton" position="0 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #hgoblinPoster" mixin="poster"></a-entity>
+
+        <a-entity id="dementorButton" position="1.6 0 0" mixin="frame" class="raycastable menu-button">
+            <a-entity material="src: #dementorfPoster" mixin="poster"></a-entity>
+        </a-entity>
+    </a-entity>
+
+    </a-entity>
+</a-entity>
+
+    <!-- Info panel of the selected animal-->
+    </a-entity
+    id="info-panel">
+    <a-entity id="movieTitle"
+    position="-0.68 -0.1 0"
+    text="shader: msdf; anchor: left; width: 1.5; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: phoenix (2003)"></a-entity>">
+     <a-entity id="movieDescription"
+     position="-0.68 -0.2 0"
+     text="baseline: top; shader: msdf; anchor: left; font: https://cdn.aframe.io/examples/ui/Viga-Regular.json; color: white; value: Harry potter creatures."></a-entity>
+            </a-entity>
+        </a-entity>
+    </a-scene>
+    </body>
+</html>
